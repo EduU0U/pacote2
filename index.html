@@ -9,15 +9,19 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #a8e063, #56ab2f); /* tons de verde */
+      overflow: hidden;
+      background: linear-gradient(135deg, #a8e063, #56ab2f);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       text-align: center;
       color: #fff;
+      position: relative;
     }
     .container {
+      position: relative;
+      z-index: 2;
       background: rgba(0, 0, 0, 0.5);
       padding: 30px;
       border-radius: 20px;
@@ -50,9 +54,41 @@
       font-size: 0.9em;
       opacity: 0.9;
     }
+
+    /* Balões animados */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 55px;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: subir 10s linear infinite;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+    @keyframes subir {
+      0% { transform: translateY(0) scale(1); opacity: 0.9; }
+      100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+    }
   </style>
 </head>
 <body>
+  <!-- Balões -->
+  <div class="balloon" style="left:10%; background:#ff6b6b; animation-delay: 0s;"></div>
+  <div class="balloon" style="left:30%; background:#feca57; animation-delay: 2s;"></div>
+  <div class="balloon" style="left:50%; background:#48dbfb; animation-delay: 4s;"></div>
+  <div class="balloon" style="left:70%; background:#1dd1a1; animation-delay: 6s;"></div>
+  <div class="balloon" style="left:90%; background:#ff9ff3; animation-delay: 8s;"></div>
+
   <div class="container">
     <img src="https://via.placeholder.com/400x250.png?text=Feliz+Aniversário" alt="Imagem de aniversário">
     <h1>Feliz Aniversário, [Nome]!</h1>
