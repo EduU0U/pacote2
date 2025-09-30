@@ -27,17 +27,25 @@
       padding: 50px;
       border-radius: 30px;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-      max-width: 700px;
+      max-width: 900px;
       width: 90%;
       height: auto;
     }
 
-    .container img {
-      width: 100%;
-      max-height: 300px;
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .gallery img {
+      width: 260px;
+      height: 180px;
       object-fit: cover;
       border-radius: 20px;
-      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     h1 {
@@ -105,9 +113,15 @@
   <div class="balloon" style="left:90%; background:#ffb8b8; animation-delay: 5s;"></div>
 
   <div class="container">
-    <img src="https://via.placeholder.com/700x300.png?text=Feliz+Aniversário" alt="Imagem de aniversário">
-    <h1>Feliz Aniversário, João!</h1>
+    <h1>Feliz Aniversário, [Nome]!</h1>
     <p>Que seu dia seja cheio de alegria, carinho e momentos inesquecíveis! 🎂✨</p>
+
+    <!-- Galeria de imagens -->
+    <div class="gallery">
+      <img src="https://via.placeholder.com/700x300.png?text=Feliz+Aniversário" alt="Imagem principal">
+      <img src="https://via.placeholder.com/400x250.png?text=Foto+1" alt="Foto 1">
+      <img src="https://via.placeholder.com/400x250.png?text=Foto+2" alt="Foto 2">
+    </div>
 
     <div class="countdown" id="countdown">Carregando contagem...</div>
 
@@ -116,7 +130,7 @@
 
   <!-- Música de fundo -->
   <audio autoplay loop>
-    <source src="https://open.spotify.com/intl-pt/track/0DO203FidgOktbX2Ly1jtr?si=d70eb10f35064bad" type="audio/mpeg">
+    <source src="https://open.spotify.com/intl-pt/track/0DO203FidgOktbX2Ly1jtr?si=08f8ac3206804de8" type="audio/mpeg">
     Seu navegador não suporta áudio.
   </audio>
 
