@@ -73,6 +73,11 @@
       opacity: 0.9;
     }
 
+    .spotify-player {
+      margin-top: 30px;
+    }
+
+    /* Balões animados */
     .balloon {
       position: absolute;
       bottom: -150px;
@@ -98,12 +103,6 @@
       0% { transform: translateY(0) scale(1); opacity: 1; }
       100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
     }
-
-    .spotify-player {
-      margin-top: 20px;
-      border-radius: 12px;
-      overflow: hidden;
-    }
   </style>
 </head>
 <body>
@@ -128,12 +127,19 @@
       <img src="amigos.jpg" alt="Foto 2">
     </div>
 
+    <!-- Contagem regressiva -->
+    <div class="countdown" id="countdown">Carregando contagem...</div>
+
     <!-- Player Spotify -->
     <div class="spotify-player">
-      <iframe style="https://open.spotify.com/intl-pt/track/0DO203FidgOktbX2Ly1jtr?si=bfff937484d242d6" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/intl-pt/track/0DO203FidgOktbX2Ly1jtr?si=b0a4754f1a064445" 
+        width="100%" 
+        height="152" 
+        frameborder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
     </div>
-
-    <div class="countdown" id="countdown">Carregando contagem...</div>
 
     <div class="footer">🎉 Feito especialmente para você 🎉</div>
   </div>
