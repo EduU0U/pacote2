@@ -32,28 +32,28 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 90vh; /* garante caber na tela */
+      height: 90vh; /* cabe inteiro na tela */
     }
 
     h1 {
       font-size: 2em;
-      margin: 5px 0;
+      margin: 5px 0 10px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     p {
       font-size: 1em;
       line-height: 1.4;
-      margin: 10px 0;
+      margin: 0; /* removi margens extras */
       flex-grow: 1;
-      overflow-y: auto; /* se texto for maior, só ele rola dentro */
+      overflow-y: auto; /* se texto passar do limite */
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
-      margin: 10px 0;
+      gap: 8px; /* espaço menor entre imagens */
+      margin: 8px 0 0; /* colado no texto */
     }
 
     .gallery img {
@@ -68,7 +68,7 @@
       font-size: 1.2em;
       font-weight: bold;
       color: #caffbf;
-      margin: 10px 0;
+      margin: 6px 0;
     }
 
     .spotify-player {
