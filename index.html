@@ -13,71 +13,80 @@
       color: #fff;
       text-align: center;
       position: relative;
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden; /* sem rolagem */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
       position: relative;
       z-index: 2;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 25px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 20px;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
       max-width: 900px;
-      margin: 20px auto;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 90vh; /* garante caber na tela */
     }
 
     h1 {
-      font-size: 2.2em;
-      margin-bottom: 15px;
+      font-size: 2em;
+      margin: 5px 0;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
     p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      font-size: 1em;
+      line-height: 1.4;
+      margin: 10px 0;
+      flex-grow: 1;
+      overflow-y: auto; /* se texto for maior, só ele rola dentro */
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      margin: 10px 0;
     }
 
     .gallery img {
       width: 100%;
-      max-width: 250px;
-      height: auto;
-      border-radius: 12px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .countdown {
-      margin-top: 15px;
-      font-size: 1.3em;
+      font-size: 1.2em;
       font-weight: bold;
       color: #caffbf;
-    }
-
-    .footer {
-      margin-top: 20px;
-      font-size: 1em;
-      opacity: 0.9;
+      margin: 10px 0;
     }
 
     .spotify-player {
-      margin-top: 20px;
+      margin: 5px 0;
+    }
+
+    .footer {
+      font-size: 0.9em;
+      opacity: 0.9;
+      margin-top: 5px;
     }
 
     /* Balões animados */
     .balloon {
       position: absolute;
       bottom: -150px;
-      width: 40px;
-      height: 60px;
+      width: 35px;
+      height: 50px;
       border-radius: 50%;
       opacity: 0.7;
       animation: subir 12s linear infinite;
@@ -89,7 +98,7 @@
       bottom: -20px;
       left: 50%;
       width: 2px;
-      height: 25px;
+      height: 20px;
       background: #fff;
       transform: translateX(-50%);
     }
@@ -99,17 +108,11 @@
       100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
     }
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-      h1 { font-size: 1.8em; }
-      p { font-size: 1em; }
-      .countdown { font-size: 1.1em; }
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 15px; }
-      h1 { font-size: 1.5em; }
-      p { font-size: 0.95em; }
+    /* Ajustes mobile */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6em; }
+      p { font-size: 0.9em; }
+      .gallery img { height: 70px; }
     }
   </style>
 </head>
@@ -126,16 +129,8 @@
 
   <div class="container">
     <h1>Feliz Aniversário, João!</h1>
-    <p>Feliz aniversário, João!
-Hoje é um dia especial e merece ser comemorado com alegria e gratidão.
-Que cada instante do seu dia seja repleto de sorrisos sinceros e boas surpresas.
-Você é uma pessoa incrível e merece tudo de melhor que a vida pode oferecer.
-Que nunca faltem saúde, amor, sucesso e momentos felizes no seu caminho.
-Continue sendo esse exemplo de força, gentileza e caráter.
-Que seus sonhos se realizem e que novos objetivos surjam para te motivar ainda mais.
-Aproveite seu dia ao lado das pessoas que te amam e torcem por você.
-Parabéns por mais um ano de vida tão bem vivido!
-Um abraço cheio de carinho e votos de muita felicidade! 🎂✨</p>
+    <p>Feliz aniversário, João! Hoje é um dia especial e merece ser comemorado com alegria. 
+    Que sua vida seja sempre repleta de amor, saúde, sucesso e muitas realizações. 🎂✨</p>
 
     <!-- Galeria de imagens -->
     <div class="gallery">
@@ -152,7 +147,7 @@ Um abraço cheio de carinho e votos de muita felicidade! 🎂✨</p>
       <iframe style="border-radius:12px" 
         src="https://open.spotify.com/embed/track/0DO203FidgOktbX2Ly1jtr?utm_source=generator5" 
         width="100%" 
-        height="152" 
+        height="80" 
         frameborder="0" 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
       </iframe>
